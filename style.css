@@ -1461,7 +1461,8 @@ body.modal-open { overflow: hidden; }
 }
 [data-lang] { display: none; }
 html[data-active-lang="tr"] [data-lang="tr"],
-html[data-active-lang="en"] [data-lang="en"] { display: block; }
+html[data-active-lang="en"] [data-lang="en"],
+html[data-active-lang="pt-BR"] [data-lang="pt-BR"] { display: block; }
 
 
 /* Modal içinde gizlilik sayfasının yalnızca metin sürümü */

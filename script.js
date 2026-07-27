@@ -75,7 +75,8 @@
     var drawerLinksHtml = '';
     Array.prototype.forEach.call(document.querySelectorAll('.nav-links a'), function (a) {
       drawerLinksHtml += '<a href="' + a.getAttribute('href') + '"' +
-        (a.dataset.en ? ' data-en="' + a.dataset.en + '"' : '') + '>' + a.innerHTML + '</a>';
+        (a.dataset.en ? ' data-en="' + a.dataset.en + '"' : '') +
+        (a.dataset.ptBr ? ' data-pt-br="' + a.dataset.ptBr + '"' : '') + '>' + a.innerHTML + '</a>';
     });
     drawer.innerHTML =
       '<div class="drawer-head">' +
@@ -86,6 +87,9 @@
       '<div class="drawer-lang"><h5>Dil / Language</h5><div class="opts">' +
         '<button type="button" data-set-lang="tr">Türkçe</button>' +
         '<button type="button" data-set-lang="en">English</button>' +
+        (document.querySelector('.lang-menu [data-set-lang="pt-BR"]')
+          ? '<button type="button" data-set-lang="pt-BR">Português (Brasil)</button>'
+          : '') +
       '</div></div>';
     var drawerBackdrop = document.createElement('div');
     drawerBackdrop.className = 'drawer-backdrop';
@@ -109,8 +113,8 @@
     });
   }
 
-  // ── Dil değişimi (TR/EN) ──
-  // data-en="..." taşıyan elemanların içeriği değiştirilir.
+  // ── Dil değişimi (TR/EN; yasal sayfalarda pt-BR) ──
+  // data-en/data-pt-br taşıyan elemanların içeriği değiştirilir.
   var LANG_KEY = 'el-finans-language';
   var renderAiDemo = null; // hareket azaltıldığında örneği dil değişimine göre günceller
   var langButtons = document.querySelectorAll('[data-set-lang]');
@@ -128,14 +132,18 @@
     var translatables = document.querySelectorAll('[data-en]');
     Array.prototype.forEach.call(translatables, function (el) {
       if (!el.dataset.tr) el.dataset.tr = el.innerHTML;
-      el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.tr;
+      if (lang === 'pt-BR') {
+        el.innerHTML = el.dataset.ptBr || el.dataset.en || el.dataset.tr;
+      } else {
+        el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.tr;
+      }
     });
     docEl.dataset.activeLang = lang;
     docEl.lang = lang;
     Array.prototype.forEach.call(langButtons, function (btn) {
       btn.setAttribute('aria-pressed', String(btn.dataset.setLang === lang));
     });
-    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
+    if (langCurrent) langCurrent.textContent = lang === 'pt-BR' ? 'PT-BR' : lang.toUpperCase();
     closeLangMenu();
     try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* gizli mod vb. */ }
     buildLegalToc(lang);
@@ -165,7 +173,8 @@
   try {
     savedLang = localStorage.getItem(LANG_KEY) || localStorage.getItem('el-finans-privacy-language');
   } catch (e) { /* gizli mod vb. */ }
-  applyLang(savedLang === 'en' ? 'en' : 'tr');
+  var savedLangButton = savedLang && document.querySelector('[data-set-lang="' + savedLang + '"]');
+  applyLang(savedLangButton ? savedLang : 'tr');
 
   // ── Destek iletişim formu: alanları güvenli mailto akışına çevirir ──
   var contactForms = document.querySelectorAll('form.contact-form');
@@ -634,7 +643,9 @@
     var title = toc.querySelector('h4');
     var section = document.querySelector('.legal-layout section[data-lang="' + lang + '"]');
     if (!nav || !section) return;
-    if (title) title.textContent = lang === 'en' ? 'Contents' : 'İçindekiler';
+    if (title) {
+      title.textContent = lang === 'en' ? 'Contents' : (lang === 'pt-BR' ? 'Conteúdo' : 'İçindekiler');
+    }
     nav.innerHTML = '';
     if (tocScrollHandler) {
       window.removeEventListener('scroll', tocScrollHandler);
