@@ -272,7 +272,7 @@
       <div class="legal-block">
         <h2>Uso sem conta e conta Premium</h2>
         <p>As funções básicas de receitas, despesas, orçamento e poupança podem ser usadas localmente sem criar uma conta EL Finans; não é pedido ID nem e-mail.</p>
-        <p>O Premium exige login. A conta associa ao usuário correto a validação de compras, direitos de assinatura e IA, backups na nuvem criptografadas, permissões de contas compartilhadas e recuperação entre dispositivos. O EL Finans não armazena cartões nem credenciais bancárias.</p>
+        <p>O Premium exige login. A conta associa ao usuário correto a validação de compras, direitos de assinatura e IA, backups na nuvem criptografados, permissões de contas compartilhadas e recuperação entre dispositivos. O EL Finans não armazena cartões nem credenciais bancárias.</p>
       </div>
       <div class="legal-block">
         <h2>Dados coletados e tratados</h2>
@@ -290,33 +290,33 @@
       </div>
       <div class="legal-block">
         <h2>Finalidades do tratamento</h2>
-        <p>Os dados servem para fornecer funções financeiras; gerencianciar conta, Premium e compras; oferecer sincronização, backup e recuperação nuvem opcionais; operar contas compartilhadas; gerar análises de IA iniciadas pelo usuário; mostrar anúncios na versão gratuita; evitar fraude e abuso; diagnosticar erros e assegurar segurança e continuidade. Os dados financeiros pessoais não são vendidos, alugados nem usados para segmentação publicitária.</p>
+        <p>Os dados servem para fornecer funções financeiras; gerenciar conta, Premium e compras; oferecer sincronização, backup e recuperação na nuvem opcionais; operar contas compartilhadas; gerar análises de IA iniciadas pelo usuário; mostrar anúncios na versão gratuita; evitar fraude e abuso; diagnosticar erros e assegurar segurança e continuidade. Os dados financeiros pessoais não são vendidos, alugados nem usados para segmentação publicitária.</p>
       </div>
       <div class="legal-block">
         <h2>Armazenamento e segurança</h2>
-        <p>Os dados financeiros pessoais são criptografados no dispositivo com AES-256-GCM. Na sincronização ou backup na nuvem pessoal, são criptografados antes do envio para a Supabase; as chaves em texto simples não vão para o servidor. Se for criado um Código de recuperação de emergência, a Supabase armazena apenas um envelope criptografado da chave nuvem; nem o código nem a chave simples saem do dispositivo.</p>
-        <p>As backups .elfb locais e nuvem são criptografadas, as transferências usam HTTPS/TLS e os segredos do servidor não integram o aplicativo.</p>
+        <p>Os dados financeiros pessoais são criptografados no dispositivo com AES-256-GCM. Na sincronização ou backup na nuvem pessoal, são criptografados antes do envio para a Supabase; as chaves em texto simples não vão para o servidor. Se for criado um Código de recuperação de emergência, a Supabase armazena apenas um envelope criptografado da chave da nuvem; nem o código nem a chave simples saem do dispositivo.</p>
+        <p>Os backups .elfb locais e na nuvem são criptografados, as transferências usam HTTPS/TLS e os segredos do servidor não integram o aplicativo.</p>
       </div>
       <div class="legal-block">
-        <h2>Sincronização, backup e recuperação nuvem</h2>
-        <p>O usuário autenticado pode ativar sincronização e backups manuais ou agendadas. Para mudança planejada usa-se Transferência de dispositivo; se o antigo estiver indisponível, um Código de recuperação de emergência armazenado; em alternativa, uma backup .elfb manual com senha. Se dispositivo, código e backup forem todos perdidos, os dados nuvem pessoais antigos não podem ser recuperados devido ao modelo de conhecimento zero.</p>
+        <h2>Sincronização, backup e recuperação na nuvem</h2>
+        <p>O usuário autenticado pode ativar sincronização e backups manuais ou agendados. Para mudança planejada usa-se Transferência de dispositivo; se o antigo estiver indisponível, um Código de recuperação de emergência armazenado; em alternativa, um backup .elfb manual com senha. Se dispositivo, código e backup forem todos perdidos, os dados na nuvem pessoais antigos não podem ser recuperados devido ao modelo de conhecimento zero.</p>
         <p>O pacote de transferência é criptografado no dispositivo e armazenado temporariamente em Supabase Storage privado. A sessão expira em 15 minutos; metadados técnicos limitados são mantidos brevemente para segurança e limpeza.</p>
       </div>
       <div class="legal-block">
         <h2>Contas compartilhadas</h2>
-        <p>Transações, planos recorrentes, dívidas, categorias e atualizações são armazenados na Supabase como JSONB não criptografado para que membros autorizados os consultem e sincronizem. É uma exceção expressa, separada das backups pessoais criptografadas. Não são públicos: estão protegidos por Row Level Security, adesão e funções de proprietário/administrador.</p>
+        <p>Transações, planos recorrentes, dívidas, categorias e atualizações são armazenados na Supabase como JSONB não criptografado para que membros autorizados os consultem e sincronizem. É uma exceção expressa, separada dos backups pessoais criptografados. Não são públicos: estão protegidos por Row Level Security, adesão e funções de proprietário/administrador.</p>
         <p>Ao adicionar dados aceita a sua visibilidade por membros autorizados. O proprietário gerencia membros e pode excluir definitivamente a conta. A saída de um membro não apaga automaticamente dados mantidos pelos demais.</p>
       </div>
       <div class="legal-block">
         <h2>Funções de inteligência artificial</h2>
-        <p>A IA só funciona quando o usuário inicia a função e dá consentimento explícito separado. Os pedidos passam por uma Supabase Edge Function autenticada paro Google Gemini API. Podem ser enviados:</p>
+        <p>A IA só funciona quando o usuário inicia a função e dá consentimento explícito separado. Os pedidos passam por uma Supabase Edge Function autenticada para o Google Gemini API. Podem ser enviados:</p>
         <ul>
           <li>Registro rápido: texto, categorias, data e tipo, valor, moeda, categoria e nota das últimas 8 transações.</li>
           <li>Digitalização: imagem/documento, indicação opcional e categorias.</li>
           <li>Consultor financeiro: totais e resumos mensais, categorias principais, planos, objetivos e títulos/valores de ativos.</li>
           <li>Caçador de poupança: resumos e, em períodos curtos, categorias, valores e notas.</li>
         </ul>
-        <p>O EL Finans não usa este conteúdo para publicidade. A produção deve usar Gemini com faturamento ativa, sem uso de prompts/respostas pelo Google para melhorar produtos/modelos. O Google pode manter registros limitados de segurança/abuso. IA para maiores de 18; consentimento revogável nas Configurações.</p>
+        <p>O EL Finans não usa este conteúdo para publicidade. A produção deve usar Gemini com faturamento ativo, sem uso de prompts/respostas pelo Google para melhorar produtos/modelos. O Google pode manter registros limitados de segurança/abuso. IA para maiores de 18; consentimento revogável nas Configurações.</p>
       </div>
       <div class="legal-block">
         <h2>Compras no aplicativo</h2>
@@ -347,15 +347,15 @@
       <div class="legal-block">
         <h2>Conservação e exclusão</h2>
         <p>Os dados do dispositivo permanecem até serem apagados pelo usuário ou com os dados do app. Sincronização e backups pessoais, perfil e envelope de recuperação ficam até excluir dados ou conta. Registros de compra/segurança podem ser armazenados por contrato, validação, fraude e lei. Dados compartilhados podem ficar até o proprietário apagar a conta. Pacotes de transferência são breves; registros técnicos são limpos depois. Dados na Sentry, AdMob, lojas e Gemini seguem as suas regras atuais.</p>
-        <p>Excluir a conta apaga dados Supabase associados, backups privadas e a chave nuvem do dispositivo. Registros limitados anonimizados ou legalmente exigidos podem permanecer até o fim do prazo.</p>
+        <p>Excluir a conta apaga dados Supabase associados, backups privados e a chave da nuvem do dispositivo. Registros limitados anonimizados ou legalmente exigidos podem permanecer até o fim do prazo.</p>
       </div>
       <div class="legal-block">
         <h2>Direitos do usuário</h2>
-        <p>No app pode apagar dados locais, restaurar dados da nuvem, retirar consentimento IA ou excluir a conta. Pedidos de acesso, retificação, exclusão, portabilidade, limitação ou oposição: <a href="mailto:support@elfinans.com">support@elfinans.com</a>.</p>
+        <p>Na app pode apagar dados locais, restaurar dados da nuvem, retirar consentimento IA ou excluir a conta. Pedidos de acesso, retificação, exclusão, portabilidade, limitação ou oposição: <a href="mailto:support@elfinans.com">support@elfinans.com</a>.</p>
         <ul>
           <li>Usuários do EEE têm direitos RGPD.</li>
           <li>Usuários dos EUA/Califórnia têm direitos estaduais aplicáveis.</li>
-          <li>Usuários de Türkiye consultam o aviso KVKK no app.</li>
+          <li>Usuários de Turquia consultam o aviso KVKK no app.</li>
           <li>Usuários no Brasil podem exercer, nos termos da LGPD, os direitos de confirmação do tratamento, acesso, retificação, anonimização, bloqueio ou exclusão, portabilidade, informação sobre compartilhamentos, revogação do consentimento e petição perante a ANPD. Os sistemas de prestadores como Supabase, Google, Apple e Sentry podem estar fora do Brasil; as transferências internacionais são limitadas às hipóteses e garantias aplicáveis da LGPD.</li>
         </ul>
       </div>
