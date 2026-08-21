@@ -1,0 +1,10 @@
+{
+  // elfinans.com Cloudflare Workers static assets yapılandırması.
+  // Yayınlanacak dosyalar build.sh tarafından dist/ altında toplanır;
+  // repo kökü doğrudan servis edilmez, aksi halde iç dokümanlar açığa çıkar.
+  "name": "el-finans-site",
+  "compatibility_date": "2026-08-21",
+  "assets": {
+    "directory": "./dist"
+  }
+}

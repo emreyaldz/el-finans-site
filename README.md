@@ -15,13 +15,15 @@ yöneticisi yoktur. TR/EN dil desteği sayfa içi dil değiştiriciyle sağlanı
 
 ## Yayın
 
-- Site Cloudflare Pages üzerinde barınır; domain GoDaddy'de kayıtlı, DNS
-  Cloudflare'de yönetilir.
+- Site Cloudflare Workers static assets üzerinde barınır; domain GoDaddy'de
+  kayıtlı, DNS Cloudflare'de yönetilir.
 - `main` dalına her push otomatik yayına çıkar.
+- `wrangler.jsonc` yayınlanacak klasörü `dist/` olarak tanımlar. Repo kökü
+  doğrudan servis edilmez; edilseydi iç dokümanlar açığa çıkardı.
 - `build.sh` gerçek bir derleme yapmaz; yalnızca yayına çıkacak dosyaları
   `dist/` altında toplar ve iç dokümanları (`AGENTS.md`, `README.md`,
-  `SITE_CONTEXT.md`) dışarıda bırakır. Repo private olduğu için bu notların
-  elfinans.com üzerinden servis edilmemesi gerekir.
+  `SITE_CONTEXT.md`) dışarıda bırakır. Cloudflare panelindeki derleme komutu
+  `bash build.sh` olmalıdır.
 - Yeni sayfa veya görsel eklerken `build.sh` düzenlenmez; dosya otomatik
   yayına dahil olur. Yalnızca yayına çıkmaması gereken bir dosya eklenirse
   `build.sh` içindeki `EXCLUDE` listesine yazılır.
