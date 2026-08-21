@@ -3,6 +3,3 @@
 .agents/
 .codex/
 __pycache__/
-
-# build.sh çıktısı — Cloudflare Pages her derlemede yeniden üretir
-dist/

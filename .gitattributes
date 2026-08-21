@@ -1,3 +1,0 @@
-# Kabuk betikleri Cloudflare'in Linux derleme ortamında çalışır.
-# CRLF satır sonu "bad interpreter" hatasına yol açar; LF sabitlenir.
-*.sh text eol=lf

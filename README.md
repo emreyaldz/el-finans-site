@@ -10,25 +10,8 @@ EL Finans kişisel finans uygulamasının tanıtım ve yasal sayfaları.
 - [terms.html](terms.html) — Kullanım Şartları
 - [account-deletion.html](account-deletion.html) — Hesap ve veri silme adımları
 
-Statik HTML/CSS/JS — kaynak dosyalar doğrudan düzenlenir, derleyici veya paket
-yöneticisi yoktur. TR/EN dil desteği sayfa içi dil değiştiriciyle sağlanır.
-
-## Yayın
-
-- Site Cloudflare Workers static assets üzerinde barınır; domain GoDaddy'de
-  kayıtlı, DNS Cloudflare'de yönetilir.
-- `main` dalına her push otomatik yayına çıkar.
-- `wrangler.jsonc` yayınlanacak klasörü `dist/` olarak tanımlar. Repo kökü
-  doğrudan servis edilmez; edilseydi iç dokümanlar açığa çıkardı.
-- `build.sh` gerçek bir derleme yapmaz; yalnızca yayına çıkacak dosyaları
-  `dist/` altında toplar ve iç dokümanları (`AGENTS.md`, `README.md`,
-  `SITE_CONTEXT.md`) dışarıda bırakır. Cloudflare panelindeki derleme komutu
-  `bash build.sh` olmalıdır.
-- Yeni sayfa veya görsel eklerken `build.sh` düzenlenmez; dosya otomatik
-  yayına dahil olur. Yalnızca yayına çıkmaması gereken bir dosya eklenirse
-  `build.sh` içindeki `EXCLUDE` listesine yazılır.
-- `CNAME` dosyası GitHub Pages'ten kalan artifakttır ve `dist/` içine
-  kopyalanmaz; Cloudflare'de özel alan adı panelden tanımlıdır.
+Statik HTML/CSS/JS — derleme adımı yoktur. TR/EN dil desteği sayfa içi dil
+değiştiriciyle sağlanır.
 
 ## Yasal İçerik İş Akışı
 
@@ -42,9 +25,7 @@ yöneticisi yoktur. TR/EN dil desteği sayfa içi dil değiştiriciyle sağlanı
 - Canlı sitedeki kullanıcıya açık sayfa adresleri .html uzantısı içermez:
   /support, /privacy-policy, /terms ve /account-deletion.
 - Navigasyon ve içerik bağlantılarında daima bu temiz yollar kullanılmalıdır.
-- Fiziksel .html dosyaları yayın kaynağı olarak korunur; yeniden adlandırılmaz.
-  Cloudflare Pages `/support` isteğini `support.html` ile karşılar ve
-  `/support.html` adresini `/support`'a yönlendirir.
+- Fiziksel .html dosyaları GitHub Pages kaynağı olarak korunur; yeniden adlandırılmaz.
 - script.js, file://, localhost ve 127.0.0.1 önizlemelerinde temiz yolları
   otomatik olarak fiziksel .html dosyalarına eşler.
 - Yeni bir sayfa eklenirse hem temiz bağlantısı hem de localizeStaticRoutes
