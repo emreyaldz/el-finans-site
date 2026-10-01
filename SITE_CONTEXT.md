@@ -45,7 +45,9 @@ This file records layout constraints that must survive future design changes. Re
 
 - The canonical Privacy Policy and Terms content lives in the app repository's `src/constants/legalDocuments.js`; the English counterparts live in `src/constants/legalTranslations.js`, while the app's other languages remain in their separate localization file. The site generator derives Brazilian Portuguese legal pages from the Portuguese source using the shared pt-BR terminology rules.
 - After changing either legal document, run `npm run legal:sync-site` from the app repository. Do not manually let `privacy-policy.html` or `terms.html` diverge from the generated app content.
-- Keep the Turkish, English, and Brazilian Portuguese last-updated labels synchronized between both legal pages. The current shared legal date is July 28, 2026 / 28 Temmuz 2026 / 28 de julho de 2026.
+- Keep the Turkish, English, and Brazilian Portuguese last-updated labels synchronized between both legal pages. The current shared legal date is October 1, 2026 / 1 Ekim 2026 / 1 de outubro de 2026.
+- Local-data deletion keeps the EL Finans session signed in and does not delete cloud records/backups, shared membership, or the account. Cloud records may return when sync resumes; cloud/account deletion are separate actions.
+- AI response replay uses a server-held encryption key (not personal-cloud E2E encryption), supports retrieval for 24 hours, and normally deletes the response within approximately 25 hours. Minimal request metadata lasts until account deletion. The new backend rollout and existing-user consent transition remain separate from this website content update.
 - Material legal changes must increment the app's legal-text version and require renewed in-app acceptance, as described by the Terms.
 - Before production release, follow the app repository's `docs/deploy-runbook.md` to verify the actual data-controller identity, production Gemini billing/data-use configuration, the AdMob UMP message, and the store privacy declarations.
 
