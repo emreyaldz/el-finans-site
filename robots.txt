@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /store-screenshots
+
+Sitemap: https://elfinans.com/sitemap.xml

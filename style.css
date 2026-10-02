@@ -1636,3 +1636,21 @@ body.privacy-reader-open { overflow: hidden; }
   .support-bot { right: 14px; bottom: 14px; }
   .support-bot-panel { width: calc(100vw - 28px); height: min(520px, calc(100vh - 130px)); bottom: 70px; }
 }
+
+/* Accessibility: keyboard skip link and reduced-motion preference. */
+.skip-link {
+  position: absolute; left: 12px; top: -64px; z-index: 1000;
+  padding: 10px 16px; border-radius: 10px;
+  background: var(--accent); color: #fff; font-weight: 600; text-decoration: none;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 12px; }
+#main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

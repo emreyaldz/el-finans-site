@@ -45,7 +45,7 @@ This file records layout constraints that must survive future design changes. Re
 
 - The canonical Privacy Policy and Terms content lives in the app repository's `src/constants/legalDocuments.js`; the English counterparts live in `src/constants/legalTranslations.js`, while the app's other languages remain in their separate localization file. The site generator derives Brazilian Portuguese legal pages from the Portuguese source using the shared pt-BR terminology rules.
 - After changing either legal document, run `npm run legal:sync-site` from the app repository. Do not manually let `privacy-policy.html` or `terms.html` diverge from the generated app content.
-- Keep the Turkish, English, and Brazilian Portuguese last-updated labels synchronized between both legal pages. The current shared legal date is October 1, 2026 / 1 Ekim 2026 / 1 de outubro de 2026.
+- Keep the Turkish, English, and Brazilian Portuguese last-updated labels synchronized between both legal pages. The current Privacy Policy date is October 2, 2026 / 2 Ekim 2026 / 2 de outubro de 2026; Terms remain October 1, 2026.
 - Local-data deletion keeps the EL Finans session signed in and does not delete cloud records/backups, shared membership, or the account. Cloud records may return when sync resumes; cloud/account deletion are separate actions.
 - AI response replay uses a server-held encryption key (not personal-cloud E2E encryption), supports retrieval for 24 hours, and normally deletes the response within approximately 25 hours. Minimal request metadata lasts until account deletion. The new backend rollout and existing-user consent transition remain separate from this website content update.
 - Material legal changes must increment the app's legal-text version and require renewed in-app acceptance, as described by the Terms.
@@ -74,3 +74,11 @@ This file records layout constraints that must survive future design changes. Re
 - When CSS or JavaScript changes, bump its shared version query in every public HTML page.
 - Keep production links extensionless and preserve the local-preview route fallback described in `AGENTS.md`.
 - After legal-content changes, confirm the Privacy Policy and Terms have matching TR/EN dates and that the homepage, Support, Account Deletion, and shared footer claims still reflect the personal-data/shared-account distinction.
+
+## Site infrastructure (2 October 2026)
+
+- Fonts are self-hosted in `fonts/` (IBM Plex Sans variable woff2, latin + latin-ext, SIL OFL); pages must not load Google Fonts.
+- Every public page carries a canonical URL, Open Graph/Twitter tags and `images/og-image.png` (1200x630).
+- `robots.txt` and `sitemap.xml` list the five public pages; `store-screenshots.html` is an internal tool page (`noindex`, disallowed).
+- `404.html` is served by GitHub Pages for unknown paths; it uses root-relative asset paths so nested URLs work.
+- Pages include a keyboard skip link (`#main`) and honor `prefers-reduced-motion`.
