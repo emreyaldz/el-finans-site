@@ -966,9 +966,9 @@
         question: { tr: "Hangi dilleri destekliyor?", en: "Which languages are supported?" },
         category: 'features',
         related: ['appearance', 'platform', 'onboarding'],
-        keywords: ['dil', 'language', 'türkçe', 'ingilizce', 'almanca', 'fransızca'],
-        tr: 'Uygulama Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, Portekizce ve İtalyanca olmak üzere 7 dili destekler.',
-        en: 'The app supports 7 languages: Turkish, English, German, French, Spanish, Portuguese and Italian.'
+        keywords: ['dil', 'language', 'türkçe', 'ingilizce', 'almanca', 'fransızca', 'japonca', 'çince', 'japanese', 'chinese', 'brezilya'],
+        tr: 'Uygulama Türkçe, İngilizce, Almanca, Fransızca, İspanyolca, Portekizce (Portekiz ve Brezilya), İtalyanca, Japonca ve Çince (Basitleştirilmiş) olmak üzere 10 dili destekler.',
+        en: 'The app supports 10 languages: Turkish, English, German, French, Spanish, Portuguese (Portugal and Brazil), Italian, Japanese and Simplified Chinese.'
       },
       {
         id: 'app-lock',
