@@ -4,8 +4,9 @@
  * Rejecting (or not choosing) sends nothing to Google. The choice is kept for
  * 12 months and can be changed from "Çerez Tercihleri" in the footer.
  *
- * Set GA_MEASUREMENT_ID (G-XXXXXXXXXX) to enable. While it is empty there is
- * nothing to consent to: no banner and no analytics are shown.
+ * The banner is always shown so the visitor's choice is recorded in advance.
+ * Analytics itself runs only when GA_MEASUREMENT_ID (G-XXXXXXXXXX) is set AND
+ * the visitor accepted; with an empty ID nothing is ever sent to Google.
  */
 (function () {
   'use strict';
@@ -15,9 +16,8 @@
   var CONSENT_VERSION = 1;
   var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
 
-  var enabled = /^G-[A-Z0-9]{6,12}$/.test(GA_MEASUREMENT_ID);
+  var analyticsConfigured = /^G-[A-Z0-9]{6,12}$/.test(GA_MEASUREMENT_ID);
   var settingsLinks = document.querySelectorAll('.js-cookie-settings');
-  if (!enabled) return; // footer settings links stay hidden
 
   Array.prototype.forEach.call(settingsLinks, function (link) {
     link.hidden = false;
@@ -46,7 +46,7 @@
 
   var gaLoaded = false;
   function loadAnalytics() {
-    if (gaLoaded) return;
+    if (gaLoaded || !analyticsConfigured) return;
     gaLoaded = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
