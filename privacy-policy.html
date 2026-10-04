@@ -61,7 +61,7 @@
   <span class="badge" data-en="Privacy" data-pt-br="Privacidade">Gizlilik</span>
   <h1 data-en='Privacy <span class="accent">Policy</span>' data-pt-br='Política de <span class="accent">Privacidade</span>'>Gizlilik <span class="accent">Politikası</span></h1>
   <p class="lede" data-en="What data the app processes, where it is stored and for which purposes it is used." data-pt-br="Quais dados o aplicativo trata, onde são armazenados e para quais finalidades são utilizados.">Uygulamada hangi verilerin işlendiği, nerede saklandığı ve hangi amaçlarla kullanıldığı.</p>
-  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: October 2, 2026" data-pt-br="Última atualização: 2 de outubro de 2026">Son güncelleme: 2 Ekim 2026</span></span>
+  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: October 4, 2026" data-pt-br="Última atualização: 4 de outubro de 2026">Son güncelleme: 4 Ekim 2026</span></span>
 </header>
 
 <main id="main" class="page-main" tabindex="-1">
@@ -85,6 +85,7 @@
           <li>Teknik ve tanılama verileri: hata mesajı, stack trace, cihaz/işletim sistemi, uygulama sürümü ve hassas alanları maskelenmiş hata bağlamı.</li>
           <li>Reklam verileri: IP adresi, yaklaşık konum çıkarımı, reklam ve uygulama etkileşimi, tanılama bilgisi ve cihaz/uygulama tanımlayıcıları.</li>
           <li>Tercihler ve güvenlik ayarları: dil, tema, para birimi, bildirim, PIN/biyometri ve yedekleme tercihleri.</li>
+          <li>Kredi kartı takip bilgileri: Kredi Kartlarım bölümüne girdiğiniz banka adı, kartın son 4 hanesi, limit, açılış borcu, hesap kesim günü ve son ödeme süresi. Tam kart numarası, CVV veya banka şifresi istenmez ve saklanmaz.</li>
         </ul>
       </div>
       <div class="legal-block">
@@ -100,6 +101,7 @@
         <h2>Bulut Senkronizasyonu, Yedekleme ve Kurtarma</h2>
         <p>Hesapla giriş yapan kullanıcı isteğe bağlı bulut senkronizasyonu, manuel veya zamanlanmış bulut yedeği kullanabilir. Planlı cihaz değişiminde Cihaz Aktarımı; eski cihaz kullanılamadığında daha önce kaydedilmiş Acil Kurtarma Kodu; alternatif olarak parola korumalı manuel .elfb yedeği kullanılabilir. Eski cihaz, kurtarma kodu ve manuel yedek birlikte kaybedilirse sıfır bilgi şifreleme modeli nedeniyle eski kişisel bulut verileri kurtarılamaz.</p>
         <p>Cihaz Aktarımı paketi cihazda şifrelenir ve özel Supabase Storage alanında geçici tutulur. Aktarım oturumu 15 dakika içinde sona erer; tamamlanan, iptal edilen veya süresi dolan oturumların teknik metadata kayıtları güvenlik ve temizlik amacıyla sınırlı süre tutulur.</p>
+        <p>Kişisel bulut senkronizasyonu Ayarlar → Veri Yönetimi → Kişisel Eşitleme bölümünden kapatılabilir; kapatırken buluttaki kopyanın silinmesini veya korunmasını seçebilirsiniz. Ortak hesaplar, üyelerin birlikte çalışabilmesi için her zaman eşitlenir.</p>
       </div>
       <div class="legal-block">
         <h2>Ortak Hesaplar</h2>
@@ -141,6 +143,7 @@
           <li>Google AdMob ve User Messaging Platform: reklam sunumu ve gizlilik tercihleri.</li>
           <li>Sentry: hassas alanları maskelenmiş hata ve çökme tanılaması.</li>
           <li>Truncgil, Altınkaynak, Frankfurter ve Binance: piyasa verileri Supabase sunucusu üzerinden alınır; bu sağlayıcılara kullanıcı IP’si veya finansal kaydı gönderilmez.</li>
+          <li>Expo (EAS Update): uygulama güncellemelerinin indirilmesi; IP adresi, platform ve uygulama/güncelleme sürüm bilgisi işlenir, finansal kayıt gönderilmez.</li>
         </ul>
       </div>
       <div class="legal-block">
@@ -198,6 +201,7 @@
           <li>Technical and diagnostic data: error message, stack trace, device/OS, app version and error context with sensitive fields scrubbed.</li>
           <li>Advertising data: IP address, approximate location inferred from IP, ad/app interactions, diagnostics and device/app identifiers.</li>
           <li>Preferences and security settings: language, theme, currency, notifications, PIN/biometrics and backup preferences.</li>
+          <li>Credit card tracking details: the bank name, last 4 card digits, limit, opening balance, statement day and payment due period you enter in My Credit Cards. The full card number, CVV or bank passwords are never requested or stored.</li>
         </ul>
       </div>
       <div class="legal-block">
@@ -213,6 +217,7 @@
         <h2>Cloud Sync, Backup and Recovery</h2>
         <p>Signed-in users may enable cloud sync and manual or scheduled cloud backup. Device Transfer can be used for a planned move; a previously saved Emergency Recovery Code can be used when the old device is unavailable; or a password-protected manual .elfb backup can be restored. If the old device, recovery code and manual backup are all lost, old personal cloud data cannot be recovered under the zero-knowledge design.</p>
         <p>A Device Transfer package is encrypted on-device and kept temporarily in private Supabase Storage. The session expires after 15 minutes; limited technical metadata for completed, cancelled or expired sessions is retained briefly for security and cleanup.</p>
+        <p>Personal cloud sync can be turned off in Settings → Data Management → Personal Sync; when turning it off you can delete or keep the cloud copy. Shared accounts always sync so that members can work together.</p>
       </div>
       <div class="legal-block">
         <h2>Shared Accounts</h2>
@@ -254,6 +259,7 @@
           <li>Google AdMob and User Messaging Platform for ads and privacy choices.</li>
           <li>Sentry for error/crash diagnostics with sensitive fields scrubbed.</li>
           <li>Truncgil, Altınkaynak, Frankfurter and Binance for market data fetched by the Supabase server; these providers do not receive the user IP or financial records.</li>
+          <li>Expo (EAS Update) for downloading app updates; it processes the IP address, platform and app/update version and receives no financial records.</li>
         </ul>
       </div>
       <div class="legal-block">
@@ -311,6 +317,7 @@
           <li>Técnica/diagnóstico: erro, stack trace, dispositivo/SO, versão e contexto depurado.</li>
           <li>Publicidade: IP, localização aproximada inferida, interações, diagnósticos e identificadores.</li>
           <li>Preferências/segurança: idioma, tema, moeda, notificações, PIN/biometria e backups.</li>
+          <li>Acompanhamento de cartões: banco, últimos 4 dígitos, limite, saldo inicial, dia de fechamento e prazo de pagamento informados em Meus cartões de crédito. O número completo, o CVV ou senhas bancárias nunca são pedidos nem armazenados.</li>
         </ul>
       </div>
       <div class="legal-block">
@@ -326,6 +333,7 @@
         <h2>Sincronização, backup e recuperação na nuvem</h2>
         <p>O usuário autenticado pode ativar sincronização e backups manuais ou agendados. Para mudança planejada usa-se Transferência de dispositivo; se o antigo estiver indisponível, um Código de recuperação de emergência armazenado; em alternativa, um backup .elfb manual com senha. Se dispositivo, código e backup forem todos perdidos, os dados na nuvem pessoais antigos não podem ser recuperados devido ao modelo de conhecimento zero.</p>
         <p>O pacote de transferência é criptografado no dispositivo e armazenado temporariamente em Supabase Storage privado. A sessão expira em 15 minutos; metadados técnicos limitados são mantidos brevemente para segurança e limpeza.</p>
+        <p>A sincronização pessoal pode ser desligada em Configurações → Gestão de dados → Sincronização pessoal; ao desligar, pode apagar ou manter os dados na nuvem. As contas compartilhadas são sempre sincronizadas para que os membros possam colaborar.</p>
       </div>
       <div class="legal-block">
         <h2>Contas compartilhadas</h2>
@@ -367,6 +375,7 @@
           <li>Google AdMob/User Messaging Platform: anúncios e privacidade.</li>
           <li>Sentry: diagnóstico depurado.</li>
           <li>Truncgil, Altınkaynak, Frankfurter e Binance: dados de mercado obtidos pelo servidor Supabase; não recebem IP nem dados financeiros do usuário.</li>
+          <li>Expo (EAS Update): download de atualizações; trata IP, plataforma e versão do app/atualização, sem dados financeiros.</li>
         </ul>
       </div>
       <div class="legal-block">
