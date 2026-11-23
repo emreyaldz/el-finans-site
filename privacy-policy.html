@@ -61,7 +61,7 @@
   <span class="badge" data-en="Privacy" data-pt-br="Privacidade">Gizlilik</span>
   <h1 data-en='Privacy <span class="accent">Policy</span>' data-pt-br='Política de <span class="accent">Privacidade</span>'>Gizlilik <span class="accent">Politikası</span></h1>
   <p class="lede" data-en="What data the app processes, where it is stored and for which purposes it is used." data-pt-br="Quais dados o aplicativo trata, onde são armazenados e para quais finalidades são utilizados.">Uygulamada hangi verilerin işlendiği, nerede saklandığı ve hangi amaçlarla kullanıldığı.</p>
-  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: October 5, 2026" data-pt-br="Última atualização: 5 de outubro de 2026">Son güncelleme: 5 Ekim 2026</span></span>
+  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: November 23, 2026" data-pt-br="Última atualização: 23 de novembro de 2026">Son güncelleme: 23 Kasım 2026</span></span>
 </header>
 
 <main id="main" class="page-main" tabindex="-1">
@@ -80,7 +80,7 @@
           <li>Finansal kayıtlar: gelir, gider, borç, kategori, tutar, para birimi, tarih, hesap, bütçe, plan, hedef ve varlık bilgileri.</li>
           <li>Kullanıcı içeriği: işlem notları, açıklamalar, hesap adları ve girdiğiniz serbest metinler.</li>
           <li>Fotoğraf veya belgeler: fiş ya da belge tarama başlatıldığında seçilen içerik geçici olarak işlenir.</li>
-          <li>Hesap ve üyelik bilgileri: kullanıcı kimliği, e-posta, görünen ad, giriş sağlayıcısı, sağlayıcı profil görseli, ortak hesap üyeliği, rolü, davet ve erişim kayıtları.</li>
+          <li>Hesap ve üyelik bilgileri: kullanıcı kimliği, e-posta, görünen ad, giriş sağlayıcısı, sağlayıcı profil görseli, ortak hesap üyeliği, rolü, davet ve erişim kayıtları. Ortak Birikim için üye bazında erişim ve görünürlük ayarları da kaydedilir.</li>
           <li>Satın alma bilgileri: ürün, abonelik durumu, süre, işlem kimliği, doğrulama sonucu ve AI kredi hareketleri. Ödeme kartı bilgileri mağazalar tarafından işlenir.</li>
           <li>Teknik ve tanılama verileri: hata mesajı, stack trace, cihaz/işletim sistemi, uygulama sürümü ve hassas alanları maskelenmiş hata bağlamı.</li>
           <li>Reklam verileri: IP adresi, yaklaşık konum çıkarımı, reklam ve uygulama etkileşimi, tanılama bilgisi ve cihaz/uygulama tanımlayıcıları.</li>
@@ -96,26 +96,30 @@
         <h2>Verilerin Saklanması ve Güvenlik</h2>
         <p>Kişisel finans verileri cihazda AES-256-GCM ile şifreli olarak saklanır. Kişisel bulut senkronizasyonu ve yedekleme kullanıldığında finans verileri Supabase altyapısına cihazda şifrelenmiş veri olarak aktarılır. Açık şifreleme anahtarları sunucuya gönderilmez. Uygulama yeniden kurulduğunda veya aynı Google ya da Apple hesabıyla yeni telefona geçildiğinde verilerin açılabilmesi için bulut anahtarı ayrıca cihazın uçtan uca şifreli platform yedeğinde (Android’de Google Block Store, iPhone’da iCloud Anahtar Zinciri) saklanır; bu anahtar EL Finans sunucularına gönderilmez. Acil Kurtarma Kodu oluşturulursa bulut anahtarının yalnızca kurtarma koduyla cihazda açılabilen şifreli zarfı Supabase’de saklanır; kurtarma kodu ve açık anahtar sunucuya gönderilmez.</p>
         <p>Yerel ve bulut .elfb yedekleri şifrelidir. Aktarım sırasında HTTPS/TLS kullanılır. Hassas sunucu anahtarları uygulama paketinde tutulmaz.</p>
+        <p>Dışa aktardığınız Excel ve PDF raporları ile manuel .elfb yedekleri, yalnızca paylaşım amacıyla uygulamanın geçici klasörüne yazılır. Bu dosyalar bir sonraki dışa aktarmada veya uygulama açılışında silinir. Raporlar şifrelenmez. Paylaşıldıktan sonra raporların korunması sizin sorumluluğunuzdadır. Manuel yedekler için en az 8 karakterli bir parola gerekir.</p>
       </div>
       <div class="legal-block">
         <h2>Bulut Senkronizasyonu, Yedekleme ve Kurtarma</h2>
         <p>Hesapla giriş yapan kullanıcı isteğe bağlı bulut senkronizasyonu, manuel veya zamanlanmış bulut yedeği kullanabilir. Planlı cihaz değişiminde Cihaz Aktarımı; eski cihaz kullanılamadığında daha önce kaydedilmiş Acil Kurtarma Kodu; alternatif olarak parola korumalı manuel .elfb yedeği kullanılabilir. Aynı Google veya Apple hesabıyla yeniden kurulumda ya da yeni telefonda kişisel bulut verileri genellikle kendiliğinden açılır. Platform yedeği kullanılamıyorsa (ör. Android ile iPhone arasında geçiş veya kapalı yedekleme) ve eski cihaz, kurtarma kodu ve manuel yedek birlikte kaybedilirse sıfır bilgi şifreleme modeli nedeniyle eski kişisel bulut verileri kurtarılamaz.</p>
         <p>Cihaz Aktarımı paketi cihazda şifrelenir ve özel Supabase Storage alanında geçici tutulur. Aktarım oturumu 15 dakika içinde sona erer; tamamlanan, iptal edilen veya süresi dolan oturumların teknik metadata kayıtları güvenlik ve temizlik amacıyla sınırlı süre tutulur.</p>
+        <p>Bulutta günde en fazla bir yedek ve toplamda en fazla 30 yedek tutulur. Eski yedekler otomatik olarak silinir.</p>
         <p>Kişisel bulut senkronizasyonu Ayarlar → Veri Yönetimi → Kişisel Eşitleme bölümünden kapatılabilir; kapatırken buluttaki kopyanın silinmesini veya korunmasını seçebilirsiniz. Ortak hesaplar, üyelerin birlikte çalışabilmesi için her zaman eşitlenir.</p>
       </div>
       <div class="legal-block">
         <h2>Ortak Hesaplar</h2>
         <p>Ortak hesaba eklenen işlem, tekrarlayan plan, kategori ve güncelleme bilgileri yetkili üyeler tarafından görülebilmesi ve eşitlenebilmesi için Supabase’de şifrelenmemiş JSONB olarak tutulur. Bu, kişisel şifreli bulut yedeğinden ayrı ve açık bir istisnadır. Ortak hesap verileri herkese açık değildir; Supabase Row Level Security, hesap üyeliği ve sahip/yönetici rolleriyle korunur.</p>
+        <p>Ortak Birikim her ortak hesapta varsayılan olarak kapalıdır ve hesap sahibi tarafından açılabilir. Açıldığında hesabın varlıkları (ad, tür, miktar, alış tarihlerini ve fiyatlarını içeren alım lotları) ve birikim hedefleri (başlık, hedef tutar, mevcut tutar, para yatırma ve çekme hareketleri) yetkili üyelerin görebilmesi için diğer ortak hesap verileri gibi Supabase’de şifrelenmemiş olarak eşitlenir.</p>
+        <p>Hesap sahibi ve hesap sahibinin yetkilerini kısıtlamadığı yöneticiler her üye için erişim düzeyini (erişim yok, yalnızca görüntüleme veya düzenleme) ve üyenin görebileceği varlık ve hedefleri ayrı ayrı belirleyebilir. Bu ayarlar sunucuda saklanır. “Birikimden çıkar” işlemiyle kaldırılan öğeler ortak kopyadan silinir ve bir sonraki eşitlemede üyelerin cihazlarından kaldırılır.</p>
         <p>Bir ortak hesaba veri eklediğinizde bu verinin diğer yetkili üyelerce görülebileceğini kabul etmiş olursunuz. Hesap sahibi üyeleri yönetebilir ve ortak hesabı kalıcı olarak silebilir. Bir üyenin ayrılması, diğer üyelerin ortak hesapta tutmaya devam ettiği verileri otomatik olarak silmez.</p>
       </div>
       <div class="legal-block">
         <h2>Yapay Zekâ Özellikleri</h2>
         <p>AI özellikleri yalnızca kullanıcı ilgili analizi başlattığında ve ayrı açık rıza verdiğinde çalışır. İstekler kimliği doğrulanmış Supabase Edge Function üzerinden Google Gemini API’ye iletilir. Özelliğe göre şu içerikler gönderilebilir:</p>
         <ul>
-          <li>Hızlı Kayıt: yazdığınız metin, kategori listesi, güncel tarih ve son 8 işlemin tür, tutar, para birimi, kategori ve not bilgisi.</li>
-          <li>Fiş/belge tarama: seçtiğiniz görsel veya belge, girdiğiniz ipucu ve kategori listesi.</li>
-          <li>Finansal Danışman: toplam ve aylık gelir-gider özetleri, öne çıkan kategoriler, aktif planlar, birikim hedefleri ve varlık başlık/tutarları.</li>
-          <li>Tasarruf Avcısı: dönem özetleri; kısa dönemlerde kategori, tutar ve işlem notlarını içeren gider listesi.</li>
+          <li>Hızlı Kayıt: yazdığınız metin, kategori listesi, güncel tarih, temel para birimi, döviz kurları ve son 8 işlemin tür, tutar, para birimi, kategori ve not bilgileri.</li>
+          <li>Fiş/belge tarama: seçtiğiniz fotoğraf veya belge, girdiğiniz ipucu, kategori listesi, güncel tarih ve temel para birimi.</li>
+          <li>Finansal Danışman: gelir ve gider toplamları ile aylık özetler, öne çıkan kategoriler, tekrarlayan planlar, birikim hedefleri, varlık adları ile bu varlıkların miktarı, güncel değeri ve kâr/zararı, toplam rezerv ve seçilen ayın kategori bütçe limitleri ile harcamaları.</li>
+          <li>Tasarruf Avcısı: dönemsel harcama özetleri, öne çıkan kategoriler ve işlem notlarından belirlenen iş yerleri, abonelikler ve sabit ödemeler, aşılan veya aşılmaya yakın bütçe limitleri ve kullanıldığında İşlemler ekranındaki etkin filtreler (kategori, hesap, arama metni). Tek ay için, en yüksek tutarlı en fazla 40 giderin kategori, tutar ve not bilgileri ile kalan giderlerin toplamı iletilir.</li>
         </ul>
         <p>AI içeriği reklam amacıyla kullanılmaz. Production hizmeti, gönderilen prompt ve yanıtların Google tarafından ürün/model geliştirme amacıyla kullanılmadığı billing etkin Gemini API veri işleme koşullarıyla çalıştırılmalıdır. Google sınırlı süreli güvenlik/kötüye kullanım kayıtları tutabilir. AI özellikleri 18 yaş ve üzeri kullanıcılar içindir; rıza Ayarlar’dan geri alınabilir.</p>
         <p>AI açık rızanız ve geri alma kaydınız (rıza sürümü ve tarihleri) hesabınıza bağlı olarak sunucuda tutulur; rızayı geri aldığınızda bütün cihazlarınızda AI aktarımı durur. Bu kayıt hesabınız silindiğinde silinir.</p>
@@ -197,7 +201,7 @@
           <li>Financial records: income, expenses, debts, categories, amounts, currencies, dates, accounts, budgets, plans, goals and asset information.</li>
           <li>User content: transaction notes, descriptions, account names and free text you enter.</li>
           <li>Photos or documents: content selected for receipt/document scanning is processed temporarily.</li>
-          <li>Account and membership information: user ID, email, display name, sign-in provider, provider profile image, shared-account membership, role, invitation and access records.</li>
+          <li>Account and membership information: user ID, email, display name, sign-in provider, provider profile image, shared-account membership, role, invitation and access records. Member-level access and visibility settings for Shared Savings are also recorded.</li>
           <li>Purchase information: product, subscription status and duration, transaction ID, verification result and AI-credit activity. Payment details are processed by the stores.</li>
           <li>Technical and diagnostic data: error message, stack trace, device/OS, app version and error context with sensitive fields scrubbed.</li>
           <li>Advertising data: IP address, approximate location inferred from IP, ad/app interactions, diagnostics and device/app identifiers.</li>
@@ -213,26 +217,30 @@
         <h2>Storage and Security</h2>
         <p>Personal financial data is stored on-device using AES-256-GCM encryption. When personal cloud sync or backup is used, data is encrypted on-device before transfer to Supabase. Plaintext keys are not sent to the server. So that data opens after a reinstall or on a new phone with the same Google or Apple account, the cloud key is also kept in the platform’s end-to-end encrypted backup (Google Block Store on Android, iCloud Keychain on iPhone); it is not sent to EL Finans servers. If an Emergency Recovery Code is created, Supabase stores only an encrypted envelope of the cloud key; the recovery code and plaintext key are not sent to the server.</p>
         <p>Local and cloud .elfb backups are encrypted, transfers use HTTPS/TLS, and sensitive server credentials are not stored in the app package.</p>
+        <p>Excel and PDF reports and manual .elfb backups you export are written to the app’s temporary folder solely for sharing. These files are deleted on the next export or app launch. Reports are unencrypted. You are responsible for protecting them after sharing. Manual backups require a password of at least 8 characters.</p>
       </div>
       <div class="legal-block">
         <h2>Cloud Sync, Backup and Recovery</h2>
         <p>Signed-in users may enable cloud sync and manual or scheduled cloud backup. Device Transfer can be used for a planned move; a previously saved Emergency Recovery Code can be used when the old device is unavailable; or a password-protected manual .elfb backup can be restored. With the same Google or Apple account, personal cloud data usually opens by itself after a reinstall or on a new phone. If the platform backup cannot be used (e.g. moving between Android and iPhone, or backup turned off) and the old device, recovery code and manual backup are all lost, old personal cloud data cannot be recovered under the zero-knowledge design.</p>
         <p>A Device Transfer package is encrypted on-device and kept temporarily in private Supabase Storage. The session expires after 15 minutes; limited technical metadata for completed, cancelled or expired sessions is retained briefly for security and cleanup.</p>
+        <p>Cloud backup storage is limited to one backup per day and 30 backups in total. Older backups are deleted automatically.</p>
         <p>Personal cloud sync can be turned off in Settings → Data Management → Personal Sync; when turning it off you can delete or keep the cloud copy. Shared accounts always sync so that members can work together.</p>
       </div>
       <div class="legal-block">
         <h2>Shared Accounts</h2>
         <p>Transactions, recurring plans, categories and update information added to a shared account are stored as unencrypted JSONB in Supabase so authorized members can view and synchronize them. This is an explicit exception separate from encrypted personal cloud backups. Shared data is not public; it is protected by Supabase Row Level Security, membership and owner/admin roles.</p>
+        <p>Shared Savings is off by default for each shared account and can be turned on by the account owner. When enabled, the account’s assets (name, type, quantity and purchase lots with dates and purchase prices) and savings goals (title, target amount, current amount, deposits and withdrawals) are synced unencrypted in Supabase, like other shared-account data, so authorized members can view them.</p>
+        <p>The owner and, unless restricted by the owner, admins can set each member’s access level (no access, view only or edit) and choose which individual assets and goals that member can see. These settings are stored on the server. Items removed using “Remove from savings” are deleted from the shared copy and removed from members’ devices on the next sync.</p>
         <p>By adding data to a shared account you acknowledge that other authorized members can view it. The owner can manage members and permanently delete the shared account. A member leaving does not automatically delete data that remaining members continue to keep in the shared account.</p>
       </div>
       <div class="legal-block">
         <h2>AI Features</h2>
         <p>AI runs only when the user starts the feature and gives separate explicit consent. Requests pass through an authenticated Supabase Edge Function to the Google Gemini API. Depending on the feature, the following may be sent:</p>
         <ul>
-          <li>Quick Entry: your text, category list, current date and the type, amount, currency, category and note of the latest 8 transactions.</li>
-          <li>Receipt/document scan: selected image or document, optional hint and categories.</li>
-          <li>Financial Advisor: income/expense totals and monthly summaries, top categories, active plans, savings goals and asset titles/amounts.</li>
-          <li>Savings Hunter: period summaries and, for short periods, expense categories, amounts and notes.</li>
+          <li>Quick Entry: your typed text, the category list, the current date, the base currency, exchange rates and the type, amount, currency, category and note of the last 8 transactions.</li>
+          <li>Receipt/document scanning: the photo or document you select, your hint, the category list, the current date and the base currency.</li>
+          <li>Financial Advisor: income and expense totals and monthly summaries, top categories, recurring plans, savings goals, asset names with quantities, current values and profit or loss, total reserve, and category budget limits and spending for the selected month.</li>
+          <li>Savings Hunter: spending summaries for the period, top categories and merchants identified from transaction notes, subscriptions and fixed payments, budget limits that have been exceeded or are close to being reached, and active filters on the Transactions screen when used (category, account and search text). For a single month, the category, amount and note are sent for up to the 40 largest expenses, with the remaining expenses sent as a total.</li>
         </ul>
         <p>AI content is not used for advertising by EL Finans. Production must use a billing-enabled Gemini configuration under which prompts and responses are not used by Google for product/model improvement. Google may retain limited security/abuse logs. AI features are for users aged 18 or older and consent can be withdrawn in Settings.</p>
         <p>Your AI consent and withdrawal record (consent version and dates) is kept on the server with your account, so withdrawing consent stops AI transfers on all your devices. The record is deleted when your account is deleted.</p>
@@ -314,7 +322,7 @@
           <li>Dados financeiros: receitas, despesas, dívidas, categorias, valores, moedas, datas, contas, orçamentos, planos, objetivos e ativos.</li>
           <li>Conteúdo: notas, descrições, nomes de contas e texto livre.</li>
           <li>Fotos/documentos: conteúdo escolhido para digitalização, tratado temporariamente.</li>
-          <li>Conta/membro: ID, e-mail, nome, fornecedor de acesso, imagem, membro, função, convites e acessos compartilhados.</li>
+          <li>Conta/membro: ID, e-mail, nome, fornecedor de acesso, imagem, membro, função, convites e acessos compartilhados. Também são registradas as permissões de acesso e de visibilidade de cada membro nas poupanças compartilhadas.</li>
           <li>Compras: produto, estado/duração, ID de transação, validação e movimentos de créditos IA; a loja trata o pagamento.</li>
           <li>Técnica/diagnóstico: erro, stack trace, dispositivo/SO, versão e contexto depurado.</li>
           <li>Publicidade: IP, localização aproximada inferida, interações, diagnósticos e identificadores.</li>
@@ -330,26 +338,30 @@
         <h2>Armazenamento e segurança</h2>
         <p>Os dados financeiros pessoais são criptografados no dispositivo com AES-256-GCM. Na sincronização ou backup na nuvem pessoal, são criptografados antes do envio para a Supabase; as chaves em texto simples não vão para o servidor. Para que os dados abram após reinstalar ou num celular novo com a mesma conta Google ou Apple, a chave da nuvem é também armazenada na backup criptografada ponto a ponto da plataforma (Google Block Store no Android, Porta-chaves iCloud no iPhone); não é enviada para os servidores da EL Finans. Se for criado um Código de recuperação de emergência, a Supabase armazena apenas um envelope criptografado da chave da nuvem; nem o código nem a chave simples saem do dispositivo.</p>
         <p>Os backups .elfb locais e na nuvem são criptografados, as transferências usam HTTPS/TLS e os segredos do servidor não integram o aplicativo.</p>
+        <p>Os relatórios em Excel e PDF e os arquivos .elfb que exportar como backup manual são armazenados na pasta temporária do app apenas para os poder compartilhar. Estes arquivos são apagados na exportação seguinte ou ao iniciar o app. Os relatórios não são criptografados. Depois de os compartilhar, a sua proteção é da sua responsabilidade. Para exportar manualmente arquivos .elfb, é necessária uma senha com pelo menos 8 caracteres.</p>
       </div>
       <div class="legal-block">
         <h2>Sincronização, backup e recuperação na nuvem</h2>
         <p>O usuário autenticado pode ativar sincronização e backups manuais ou agendados. Para mudança planejada usa-se Transferência de dispositivo; se o antigo estiver indisponível, um Código de recuperação de emergência armazenado; em alternativa, um backup .elfb manual com senha. Com a mesma conta Google ou Apple, os dados na nuvem pessoais costumam abrir sozinhos após reinstalar ou num celular novo. Se a backup da plataforma não puder ser usada (p. ex., ao mudar entre Android e iPhone ou com a backup desativada) e dispositivo, código e backup forem todos perdidos, os dados na nuvem pessoais antigos não podem ser recuperados devido ao modelo de conhecimento zero.</p>
         <p>O pacote de transferência é criptografado no dispositivo e armazenado temporariamente em Supabase Storage privado. A sessão expira em 15 minutos; metadados técnicos limitados são mantidos brevemente para segurança e limpeza.</p>
+        <p>O limite de backups na nuvem é de 1 por dia e de 30 no total. O sistema elimina automaticamente os arquivos mais antigos.</p>
         <p>A sincronização pessoal pode ser desligada em Configurações → Gestão de dados → Sincronização pessoal; ao desligar, pode apagar ou manter os dados na nuvem. As contas compartilhadas são sempre sincronizadas para que os membros possam colaborar.</p>
       </div>
       <div class="legal-block">
         <h2>Contas compartilhadas</h2>
         <p>Transações, planos recorrentes, categorias e atualizações são armazenados na Supabase como JSONB não criptografado para que membros autorizados os consultem e sincronizem. É uma exceção expressa, separada dos backups pessoais criptografados. Não são públicos: estão protegidos por Row Level Security, adesão e funções de proprietário/administrador.</p>
+        <p>As poupanças compartilhadas estão desativadas por predefinição em cada conta compartilhada. O proprietário da conta pode ativá-las. Quando estão ativas, os ativos (nome, tipo, quantidade e lotes de compra com datas e preços de aquisição) e os objetivos de poupança (título, valor pretendido, valor atual, depósitos e levantamentos) da conta são sincronizados sem criptografia na Supabase, tal como os demais dados da conta compartilhada, para que os membros autorizados os possam consultar.</p>
+        <p>O proprietário e os administradores cujas permissões não tenham sido limitadas pelo proprietário podem definir o nível de acesso de cada membro (sem acesso, apenas consulta ou edição) e escolher individualmente os ativos e objetivos que esse membro pode consultar. Estas permissões são armazenadas no servidor. Os itens retirados através de «Remover das poupanças» são eliminados da versão compartilhada e removidos dos dispositivos dos membros na sincronização seguinte.</p>
         <p>Ao adicionar dados aceita a sua visibilidade por membros autorizados. O proprietário gerencia membros e pode excluir definitivamente a conta. A saída de um membro não apaga automaticamente dados mantidos pelos demais.</p>
       </div>
       <div class="legal-block">
         <h2>Funções de inteligência artificial</h2>
         <p>A IA só funciona quando o usuário inicia a função e dá consentimento explícito separado. Os pedidos passam por uma Supabase Edge Function autenticada para o Google Gemini API. Podem ser enviados:</p>
         <ul>
-          <li>Registro rápido: texto, categorias, data e tipo, valor, moeda, categoria e nota das últimas 8 transações.</li>
-          <li>Digitalização: imagem/documento, indicação opcional e categorias.</li>
-          <li>Consultor financeiro: totais e resumos mensais, categorias principais, planos, objetivos e títulos/valores de ativos.</li>
-          <li>Caçador de poupança: resumos e, em períodos curtos, categorias, valores e notas.</li>
+          <li>Registro rápido: texto introduzido, lista de categorias, data atual, moeda base, taxas de câmbio e tipo, valor, moeda, categoria e nota das últimas 8 transações.</li>
+          <li>Digitalização de recibos ou documentos: fotografia ou documento selecionado, indicação dada, lista de categorias, data atual e moeda base.</li>
+          <li>Consultor financeiro: totais e resumos mensais de receitas e despesas, categorias principais, planos recorrentes, objetivos de poupança, nomes dos ativos com quantidades, valores atuais e ganhos ou perdas, reserva total e limites de orçamento por categoria e despesas do mês selecionado.</li>
+          <li>Caçador de poupança: resumos de despesas do período, principais categorias e comerciantes identificados pelas notas das transações, assinaturas e pagamentos fixos, limites de orçamento ultrapassados ou perto de serem atingidos e, quando utilizados, os filtros ativos na secção de transações (categoria, conta e texto de pesquisa). Para um único mês, são enviados a categoria, o valor e a nota de até 40 das maiores despesas. As outras despesas são enviadas como um total.</li>
         </ul>
         <p>O EL Finans não usa este conteúdo para publicidade. A produção deve usar Gemini com faturamento ativo, sem uso de prompts/respostas pelo Google para melhorar produtos/modelos. O Google pode manter registros limitados de segurança/abuso. IA para maiores de 18; consentimento revogável nas Configurações.</p>
         <p>Seu consentimento de IA e sua revogação (versão e datas) são armazenados no servidor com a sua conta; ao revogá-lo, as transferências de IA param em todos os seus dispositivos. O registro é apagado com a conta.</p>
