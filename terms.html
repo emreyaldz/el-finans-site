@@ -61,7 +61,7 @@
   <span class="badge" data-en="Legal" data-pt-br="Legal">Yasal</span>
   <h1 data-en='Terms of <span class="accent">Use</span>' data-pt-br='Termos de <span class="accent">Uso</span>'>Kullanım <span class="accent">Şartları</span></h1>
   <p class="lede" data-en="The rules and responsibilities that apply when using the EL Finans app." data-pt-br="As regras e responsabilidades aplicáveis ao uso do aplicativo EL Finans.">EL Finans uygulamasını kullanırken geçerli olan kurallar ve sorumluluklar.</p>
-  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: October 5, 2026" data-pt-br="Última atualização: 5 de outubro de 2026">Son güncelleme: 5 Ekim 2026</span></span>
+  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: November 23, 2026" data-pt-br="Última atualização: 23 de novembro de 2026">Son güncelleme: 23 Kasım 2026</span></span>
 </header>
 
 <main id="main" class="page-main" tabindex="-1">
@@ -90,11 +90,13 @@
           <li>Başka kişilere ait kişisel veya gizli verileri yetkiniz olmadan uygulamaya ya da AI özelliklerine girmemelisiniz.</li>
           <li>Uygulamayı yalnızca yasal amaçlarla kullanmalısınız.</li>
           <li>PIN yalnızca cihazınızda saklanır; biz dahil kimse göremez veya sıfırlayamaz. PIN unutulursa kilit, yalnızca o cihazdaki EL Finans verileri silinerek kaldırılabilir; buluta eşitlenmiş veya yedeklenmiş veriler daha sonra geri yüklenebilir.</li>
+          <li>Dışa aktarılan Excel ve PDF raporları şifrelenmez. Paylaştığınız raporları korumak sizin sorumluluğunuzdadır.</li>
         </ul>
       </div>
       <div class="legal-block">
         <h2>5. Ortak Hesaplar</h2>
         <p>Ortak hesaba eklenen veriler hesabın yetkili üyeleri tarafından görülebilir ve değiştirilebilir. Ortak hesap senkronizasyon verileri, üyeler arasında paylaşılabilmesi için kişisel şifreli bulut yedeğinden ayrı olarak Supabase’de şifrelenmemiş biçimde tutulur ve rol tabanlı erişim kurallarıyla korunur.</p>
+        <p>Ortak Birikim her ortak hesapta varsayılan olarak kapalıdır. Hesap sahibi özelliği açtığında varlık ve birikim hedefi verileri ortak hesabın yetkili üyeleriyle paylaşılmak üzere eşitlenir. Hesap sahibi ve hesap sahibinin yetkilerini kısıtlamadığı yöneticiler her üye için erişim düzeyini (erişim yok, yalnızca görüntüleme veya düzenleme) ve üyenin görebileceği varlık ve hedefleri ayrı ayrı belirleyebilir. Bu ayarlar sunucuda saklanır. “Birikimden çıkar” işlemiyle kaldırılan öğeler ortak kopyadan silinir ve bir sonraki eşitlemede üyelerin cihazlarından kaldırılır.</p>
         <p>Yalnızca paylaşmaya yetkili olduğunuz verileri eklemelisiniz. Hesap sahibi üye ve rol yönetiminden sorumludur. Bir üyenin ayrılması diğer üyelerin ortak hesapta kullanmaya devam ettiği verileri otomatik silmez; ortak hesabı kalıcı silme yetkisi hesap sahibindedir.</p>
       </div>
       <div class="legal-block">
@@ -130,7 +132,7 @@
       </div>
       <div class="legal-block">
         <h2>9. Veriler ve Gizlilik</h2>
-        <p>Kişisel cihaz verileri ve kişisel bulut yedekleri şifrelenir. Yetkili üyelerin ortak çalışması için tutulan ortak hesap senkronizasyon verileri bu şifreleme kuralının açık istisnasıdır; Supabase’de şifrelenmemiş tutulur ve rol tabanlı erişimle korunur. AI, reklam, tanılama, saklama ve silme detayları Gizlilik Politikası’nda açıklanır.</p>
+        <p>Kişisel cihaz verileri ve kişisel bulut yedekleri şifrelenir. Yetkili üyelerin ortak çalışması için tutulan ortak hesap senkronizasyon verileri bu şifreleme kuralının açık istisnasıdır; Supabase’de şifrelenmemiş tutulur ve rol tabanlı erişimle korunur. Bu kapsama Ortak Birikim üzerinden paylaşılan varlık ve hedef verileri de girer. Bu verilere erişim üye ve öğe bazında belirlenen ayarlara tabidir. AI, reklam, tanılama, saklama ve silme detayları Gizlilik Politikası’nda açıklanır.</p>
       </div>
       <div class="legal-block">
         <h2>10. Hizmetin Sunulması</h2>
@@ -183,11 +185,13 @@
           <li>Do not submit another person’s personal or confidential data without authority.</li>
           <li>Use the app only for lawful purposes.</li>
           <li>The PIN is stored only on your device; nobody, including us, can see or reset it. If the PIN is forgotten, the lock can only be removed by deleting the EL Finans data on that device; data synced to the cloud or backed up can be restored afterwards.</li>
+          <li>Exported Excel and PDF reports are unencrypted. You are responsible for protecting reports you share.</li>
         </ul>
       </div>
       <div class="legal-block">
         <h2>5. Shared Accounts</h2>
         <p>Data added to a shared account can be viewed and changed by authorized members. To enable collaboration, shared-account sync data is stored unencrypted in Supabase, separately from encrypted personal cloud backups, and protected by role-based access.</p>
+        <p>Shared Savings is off by default for each shared account. When the owner turns it on, asset and savings-goal data is synced for sharing with authorized members of that account. The owner and, unless restricted by the owner, admins can set each member’s access level (no access, view only or edit) and choose which individual assets and goals that member can see. These settings are stored on the server. Items removed using “Remove from savings” are deleted from the shared copy and removed from members’ devices on the next sync.</p>
         <p>Add only data you are authorized to share. The owner is responsible for member and role management. A member leaving does not automatically delete data used by remaining members; only the owner can permanently delete the shared account.</p>
       </div>
       <div class="legal-block">
@@ -223,7 +227,7 @@
       </div>
       <div class="legal-block">
         <h2>9. Data and Privacy</h2>
-        <p>Personal device data and personal cloud backups are encrypted. Shared-account sync data is an explicit exception: it is stored unencrypted so authorized members can collaborate and is protected by role-based access. AI, ads, diagnostics, retention and deletion are detailed in the Privacy Policy.</p>
+        <p>Personal device data and personal cloud backups are encrypted. Shared-account sync data is an explicit exception: it is stored unencrypted so authorized members can collaborate and is protected by role-based access. This includes asset and goal data shared through Shared Savings. Access to that data is subject to member- and item-level settings. AI, ads, diagnostics, retention and deletion are detailed in the Privacy Policy.</p>
       </div>
       <div class="legal-block">
         <h2>10. Service Availability</h2>
@@ -276,11 +280,13 @@
           <li>Não introduza dados de terceiros sem autorização.</li>
           <li>Use o app apenas legalmente.</li>
           <li>O PIN fica armazenado apenas no seu dispositivo; ninguém, nem mesmo nós, pode vê-lo ou redefini-lo. Se você esquecê-lo, o bloqueio só pode ser removido apagando os dados do EL Finans nesse dispositivo; os dados sincronizados ou com backup podem ser restaurados depois.</li>
+          <li>Os relatórios exportados em Excel e PDF não são criptografados. É da sua responsabilidade proteger os relatórios que compartilhar.</li>
         </ul>
       </div>
       <div class="legal-block">
         <h2>5. Contas compartilhadas</h2>
         <p>Membros autorizados podem ver e alterar dados. Para colaborar, são armazenados sem criptografia na Supabase, separados dos backups pessoais criptografados e protegidos por funções.</p>
+        <p>As poupanças compartilhadas estão desativadas por predefinição em cada conta compartilhada. Quando o proprietário as ativa, os dados de ativos e objetivos de poupança são sincronizados para que possam ser compartilhados com os membros autorizados da conta. O proprietário e os administradores cujas permissões não tenham sido limitadas pelo proprietário podem definir o nível de acesso de cada membro (sem acesso, apenas consulta ou edição) e escolher individualmente os ativos e objetivos que esse membro pode consultar. Estas permissões são armazenadas no servidor. Os itens retirados através de «Remover das poupanças» são eliminados da versão compartilhada e removidos dos dispositivos dos membros na sincronização seguinte.</p>
         <p>Adicione apenas dados que possa compartilhar. O proprietário gerencia membros/funções. Sair não apaga dados usados pelos demais; só o proprietário elimina definitivamente.</p>
       </div>
       <div class="legal-block">
@@ -316,7 +322,7 @@
       </div>
       <div class="legal-block">
         <h2>9. Dados e privacidade</h2>
-        <p>Dados pessoais locais e backups na nuvem são criptografados. Dados de contas compartilhadas são exceção expressa: sem criptografia para colaboração, protegidos por funções. IA, anúncios, diagnóstico, conservação e exclusão constam da Política de Privacidade.</p>
+        <p>Dados pessoais locais e backups na nuvem são criptografados. Dados de contas compartilhadas são exceção expressa: sem criptografia para colaboração, protegidos por funções. Isto inclui os dados de ativos e objetivos das poupanças compartilhadas. O acesso a estes dados depende das permissões de cada membro e de cada item. IA, anúncios, diagnóstico, conservação e exclusão constam da Política de Privacidade.</p>
       </div>
       <div class="legal-block">
         <h2>10. Disponibilidade</h2>
