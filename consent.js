@@ -120,7 +120,7 @@
     if (first) first.focus();
   }
 
-  // Built before script.js runs so the site's language switcher translates it.
+  // Built before site.js runs so the site's language switcher translates it.
   banner = buildBanner();
   var choice = readChoice();
   if (!choice) {

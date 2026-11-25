@@ -1,11 +1,11 @@
 # EL Finans Site Context
 
-This file records layout constraints that must survive future design changes. Read it before editing `index.html`, `style.css`, phone frames, screenshots, or full-screen sections.
+This file records layout constraints that must survive future design changes. Read it before editing `index.html`, `site.css`, `premium.css`, phone frames, screenshots, or full-screen sections.
 
 ## Non-negotiable viewport behavior
 
 - The 27-inch, 1920-class desktop composition is the source of truth. Its reference layout canvas is 1920x930 CSS pixels, including the 64px fixed navigation allowance.
-- The complete primary content of the hero, Features showcase, AI Assistant, Gallery, and Security sections must remain visible without clipping on desktop viewports from 1280x720 through 2560x1440 CSS pixels.
+- The complete primary content of the hero, Features highlights, AI Assistant, Gallery, Plans, and Security sections must remain visible without clipping on desktop viewports from 1280x720 through 2560x1440 CSS pixels.
 - Representative acceptance sizes are 1280x720, 1366x768, 1440x900, 1920x930, 1920x1080, and 2560x1440.
 - On viewports at least 901px wide, the reference scene must scale as one unit from the available width and height. Headings, phones, cards, gaps, and panel dimensions must keep the same relative placement seen at the 1920-class reference.
 - Sticky/full-screen scenes may use the available viewport height, but their visible content must fit between the fixed navigation and the bottom edge.
@@ -27,12 +27,15 @@ This file records layout constraints that must survive future design changes. Re
 
 ## Phone frame invariants
 
-- All `feature-sections` screenshots in the hero, Features showcase, and AI Assistant use the shared `.phone > .screen` structure.
-- Keep the metallic grey outer frame, black inner bezel, Dynamic Island, left-side controls, and right-side power button consistent.
+- All `feature-sections` screenshots in the hero, Features highlights cards, and AI Assistant use the shared `.phone > .screen` structure.
+- The AI Assistant phone always shows the real `hizli-kayit-asistani.webp` screenshot. The demo only overlays it (`.ai-screen-overlay`): typed text inside the screenshot's own "Serbest Metin" box and glow rings around its tabs and buttons, positioned in screen percentages. On desktop, the receipt scan and result card sit to the right of the phone.
+- Keep the silver metallic outer frame, black inner bezel, Dynamic Island, left-side controls, and right-side power button consistent.
 - On desktop, phone size follows the same shared scene scale as its surrounding content. Do not scale the phone independently from the section composition.
+- Every 3D phone uses the silver (cool aluminium) frame in both themes; the colour tokens live on `.phone` in `site.css`. The hero phone is static and matches the AI Assistant phone in visible size and angle (rotateY -10deg, rotateX 3deg); only the card, coins and chips around it move.
+- The 3D side band uses ten rounded contour rings with the front face's corner radius, evenly spaced along the depth behind the front face.
 - The screenshot must never be cropped to make the device fit.
-- On desktop, the active showcase image must be fully loaded and match the `.screen` content box in both width and height throughout every scroll-driven transition.
-- Feature screenshots use an overlapping crossfade: the outgoing screenshot stays fully opaque while the incoming screenshot fades above it. Never expose the black screen background or add a scale transition that creates a dark flash, shadow, or ghosting between screenshots.
+- On desktop, Features is a horizontal highlights carousel (large rounded cards, caption on top, phone rising from the card bottom, dot pill with progress and a play/pause button). It auto-advances, pauses on hover/focus/off-screen, and supports dots, drag and arrow keys. Its rail may extend to the page edges; the page itself must not scroll horizontally.
+- Screenshot swaps use an overlapping crossfade: the outgoing screenshot stays fully opaque while the incoming screenshot fades above it. Never expose the black screen background or add a scale transition that creates a dark flash, shadow, or ghosting between screenshots.
 
 ## Support privacy-link behavior
 
@@ -67,10 +70,10 @@ This file records layout constraints that must survive future design changes. Re
 - After layout changes, verify the representative desktop sizes above with special attention to 1366x768 and 2560x1440.
 - Compare the 14-inch result with the 27-inch reference: section headings, text blocks, phones, panels, grids, and gallery cards must preserve their relative positions and proportions.
 - Confirm the shared desktop scale is `1` at or above the reference canvas and decreases uniformly on smaller desktop viewports; below 901px it must reset to `1` for natural mobile flow.
-- Confirm there is no vertical clipping from `overflow: hidden` in `.hero`, `.showcase-stage`, or `.immersive-stage`.
+- Confirm there is no vertical clipping from `overflow: hidden` in `.hero` or any `.viewport-stage`.
 - Confirm hero entrance animations, reveal effects, showcase screen transitions, the AI typing demo, gallery marquee, phone parallax, and pointer tilt remain active even when the host operating system requests reduced motion.
-- Confirm the Security and desktop CTA sticky stages center their content in the viewport below the fixed navigation. The CTA card must stay inside an outer `.viewport-layout` wrapper so it follows the shared desktop scale without overriding its reveal animation.
-- Confirm all public pages reference the same current `style.css` and `script.js` asset versions.
+- Confirm the sticky stages (Security, Plans, CTA and the others) center their content in the viewport below the fixed navigation.
+- Confirm all public pages reference the same current shared asset versions (`site.css`, `site.js`, `pages.css`, `pages.js`, `consent.js`, `support-bot.*`; `premium.*` on the homepage).
 - When CSS or JavaScript changes, bump its shared version query in every public HTML page.
 - Keep production links extensionless and preserve the local-preview route fallback described in `AGENTS.md`.
 - After legal-content changes, confirm the Privacy Policy and Terms have matching TR/EN dates and that the homepage, Support, Account Deletion, and shared footer claims still reflect the personal-data/shared-account distinction.
@@ -83,3 +86,24 @@ This file records layout constraints that must survive future design changes. Re
 - `404.html` is served by GitHub Pages for unknown paths; it uses root-relative asset paths so nested URLs work.
 - Pages include a keyboard skip link (`#main`) and honor `prefers-reduced-motion`.
 - Cookie consent: `consent.js` loads Google Analytics 4 only after "Kabul et"; Accept/Reject have equal weight; the choice is stored in `el-finans-cookie-consent` for 12 months and can be changed via the footer "Çerez Tercihleri" link. The banner always shows and records the choice; Google Analytics loads only when `GA_MEASUREMENT_ID` is set and the visitor accepted (empty ID: nothing is sent to Google). `cookie-policy.html` documents storage and GA; keep it in sync with `consent.js`.
+
+## Page rhythm (premium layout)
+
+- Every homepage section carries `data-tone="base|alt|ink"`. `base` uses `--bg`, `alt` uses `--section-alt`, and `ink` is a theme-independent dark block (dark tokens apply inside it).
+- Section backgrounds are flat, full-width tone blocks with intentional boundaries. Do not reintroduce section glows, neon halos, gradient text, or glassy gradient borders.
+- The palette is neutral (light: #fff / #f5f5f7, dark: #000 / #101012) with the brand blue reserved for real accents.
+
+## Mobile (≤900px)
+
+- Use a layout designed for touch and natural vertical flow at mobile widths.
+- Use full-bleed, horizontally scrollable card rails for Stats, Security, and Plans. Keep scroll snap on the horizontal rails and keep vertical page scrolling free.
+- Provide previous and next buttons for Security and Plans, with disabled states at the ends. Preserve all headings, descriptions, cards, and plan rows at full length.
+- Features uses a native horizontal scroll-snap rail on mobile, with synchronized dots and autoplay disabled.
+- In the AI Assistant demo, the receipt scan and result cards sit side by side below the phone.
+
+## Scrolling feel (desktop)
+
+- Scrolling is fully native: no wheel paging, no `preventDefault` on wheel, no CSS `scroll-snap`, and no automatic settle onto sections during scrolling. All three were tried and rejected by the owner because they felt jumpy or fought the user's own scrolling.
+- When a section link opens the homepage from another page, the first visible frame shows the target section below the navigation without showing the hero first.
+- The "sections sit in place" feeling comes from the same technique the original site used: every full-screen section except the hero is one screen plus 15% of the viewport tall (the original site used 34%; the owner asked for a shorter pause), and its `.viewport-stage` is `position: sticky` below the nav. While scrolling through that extra 15%, the section stays fully framed, then scrolls away naturally. Keep this dwell and do not add `overflow: hidden/auto` to sections or their ancestors (it breaks sticky).
+- The hero is a full screen; the stats strip appears only while scrolling between the hero and Features.

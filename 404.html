@@ -1,54 +1,66 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-active-lang="tr" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <script>(function(){var t='light';try{t=localStorage.getItem('el-finans-theme')==='dark'?'dark':'light'}catch(e){}document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').content=t==='light'?'#fff':'#000'})();</script>
+  <script src="/pages.js?v=20261125-1"></script>
   <title>EL Finans - Sayfa bulunamadı</title>
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/favicon-192.png">
   <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
-  <style>
-    :root { color-scheme: light dark; --accent: #2563eb; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
-      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(37, 99, 235, .14), transparent 60%), #f7f9fc;
-      color: #0f172a;
-    }
-    main { max-width: 520px; text-align: center; }
-    .logo { width: 72px; height: 72px; border-radius: 18px; }
-    .code { margin: 20px 0 4px; font-size: 64px; font-weight: 700; color: var(--accent); letter-spacing: -1px; }
-    h1 { margin: 0 0 10px; font-size: 24px; }
-    p { margin: 0 0 6px; color: #475569; line-height: 1.55; }
-    .en { color: #64748b; font-size: 15px; }
-    nav { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
-    a.btn {
-      padding: 12px 20px; border-radius: 12px; font-weight: 600; text-decoration: none;
-      background: var(--accent); color: #fff;
-    }
-    a.btn.secondary { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
-    a.btn:focus-visible { outline: 3px solid rgba(37, 99, 235, .45); outline-offset: 3px; }
-    @media (prefers-color-scheme: dark) {
-      body { background: radial-gradient(1200px 600px at 20% 0%, rgba(37, 99, 235, .28), transparent 60%), #0b1220; color: #e2e8f0; }
-      p { color: #a8b3c7; }
-      .en { color: #8a96ab; }
-    }
-  </style>
+  <link rel="stylesheet" href="/fonts/fonts.css?v=20261125-1">
+  <link rel="stylesheet" href="/site.css?v=20261125-28">
+  <link rel="stylesheet" href="/pages.css?v=20261125-7">
+  <link rel="stylesheet" href="/support-bot.css?v=20261125-2">
 </head>
-<body>
-  <main>
-    <img class="logo" src="/images/logo-nav.png" alt="EL Finans" width="72" height="72">
-    <div class="code" aria-hidden="true">404</div>
+
+<body class="subpage error-page">
+<a class="skip-link" href="#main" data-en="Skip to content">İçeriğe geç</a>
+
+<main id="main" class="error-stage" tabindex="-1">
+  <div class="error-card glass">
+    <img class="error-logo" src="/images/logo-nav.png" alt="EL Finans" width="72" height="72">
+    <div class="error-code accent" aria-hidden="true">404</div>
     <h1>Aradığınız sayfa bulunamadı</h1>
     <p>Bağlantı değişmiş ya da sayfa kaldırılmış olabilir.</p>
-    <p class="en" lang="en">The page you are looking for could not be found.</p>
+    <p class="error-translation" lang="en">The page you are looking for could not be found.</p>
     <nav aria-label="Sayfa bağlantıları">
-      <a class="btn" href="/">Ana sayfa</a>
-      <a class="btn secondary" href="/support">Destek</a>
+      <a class="page-button" href="/">Ana sayfa</a>
+      <a class="page-button page-button-secondary" href="/support">Destek</a>
     </nav>
-  </main>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/" aria-label="EL Finans"><span class="brand-mark"><img src="/images/logo-nav.png" alt="" width="42" height="42"></span><span class="brand-name">Finans</span></a>
+      <p data-en="Encrypted personal data, secure shared accounts, and AI-powered finance management.">Şifreli kişisel veriler, güvenli ortak hesaplar ve yapay zekâ destekli finans yönetimi.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Pages">Sayfalar</h4>
+      <a href="/#features" data-en="Features">Özellikler</a>
+      <a href="/#security" data-en="Security">Güvenlik</a>
+      <a href="/support" data-en="Support">Destek</a>
+      <a href="/#download" data-en="Download">İndir</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-en="Legal">Yasal</h4>
+      <a href="/privacy-policy" data-en="Privacy Policy">Gizlilik Politikası</a>
+      <a href="/terms" data-en="Terms of Use">Kullanım Şartları</a>
+      <a href="/account-deletion" data-en="Account Deletion">Hesap Silme</a>
+      <a href="/cookie-policy" data-en="Cookie Policy" data-pt-br="Política de Cookies">Çerez Politikası</a>
+      <a href="/cookie-policy" class="js-cookie-settings" hidden data-en="Cookie Settings" data-pt-br="Preferências de cookies">Çerez Tercihleri</a>
+    </div>
+  </div>
+  <div class="copy-line" data-en="© 2026 EL Finans. All rights reserved.">© 2026 EL Finans. Tüm hakları saklıdır.</div>
+</footer>
+
+<script src="/consent.js?v=20261125-2"></script>
+<script src="/site.js?v=20261125-4"></script>
+<script src="/support-bot.js?v=20261125-4"></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="tr" data-active-lang="tr">
+<html lang="tr" data-active-lang="tr" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <script>(function(){var t='light';try{t=localStorage.getItem('el-finans-theme')==='dark'?'dark':'light'}catch(e){}document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;document.querySelector('meta[name="theme-color"]').content=t==='light'?'#fff':'#000'})();</script>
+  <script src="pages.js?v=20261125-1"></script>
   <title data-en="EL Finans - Privacy Policy" data-pt-br="EL Finans - Política de Privacidade">EL Finans - Gizlilik Politikası</title>
   <meta name="description" content="EL Finans gizlilik politikası: verilerin işlenmesi, saklanması, güvenliği ve kullanıcı hakları.">
   <link rel="canonical" href="https://elfinans.com/privacy-policy">
@@ -21,50 +24,82 @@
   <link rel="icon" type="image/png" href="images/favicon-192.png">
   <link rel="apple-touch-icon" href="images/favicon-192.png">
   <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=20260728-18">
+  <link rel="stylesheet" href="fonts/fonts.css?v=20261125-1">
+  <link rel="stylesheet" href="site.css?v=20261125-28">
+  <link rel="stylesheet" href="pages.css?v=20261125-7">
+  <link rel="stylesheet" href="support-bot.css?v=20261125-2">
 </head>
-<body>
+
+<body class="subpage">
 <a class="skip-link" href="#main" data-en="Skip to content">İçeriğe geç</a>
 
-<nav class="nav">
-  <button type="button" class="nav-burger" aria-label="Menüyü aç" aria-expanded="false">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-  </button>
-  <a class="brand" href="/" aria-label="EL Finans"><span class="brand-mark"><img src="images/logo-nav.png" alt="" width="42" height="42"></span><span class="brand-name">Finans</span></a>
-  <div class="nav-links">
-    <a href="/#features" data-en="Features" data-pt-br="Recursos">Özellikler</a>
-    <a href="/#security" data-en="Security" data-pt-br="Segurança">Güvenlik</a>
-    <a href="/support" data-en="Support" data-pt-br="Suporte">Destek</a>
-    <a class="nav-cta" href="/#download" data-en="Download" data-pt-br="Baixar">İndir</a>
-  </div>
-  <div class="lang-switch" aria-label="Dil / Language">
-    <button type="button" class="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <span class="lang-current">TR</span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-    </button>
-    <div class="lang-menu">
-      <button type="button" data-set-lang="tr" aria-pressed="true">Türkçe</button>
-      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
-      <button type="button" data-set-lang="pt-BR" aria-pressed="false">Português (Brasil)</button>
+<header class="nav">
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="EL Finans"><span class="brand-mark"><img src="images/logo-nav.png" alt="" width="42" height="42"></span><span class="brand-name">Finans</span></a>
+    <nav class="main-nav" aria-label="Ana menü" data-label-en="Main navigation">
+      <a href="/#features" data-en="Features" data-pt-br="Recursos">Özellikler</a>
+      <a href="/#ai" data-en="AI Assistant" data-pt-br="Assistente de IA">Yapay Zeka</a>
+      <a href="/#security" data-en="Security" data-pt-br="Segurança">Güvenlik</a>
+      <a href="/support" data-en="Support" data-pt-br="Suporte">Destek</a>
+      <a class="nav-cta" href="/#download" data-en="Download" data-pt-br="Baixar">İndir</a>
+    </nav>
+    <div class="nav-actions">
+      <button type="button" class="icon-button theme-toggle" aria-label="Açık temaya geç" data-label-tr="Açık temaya geç" data-label-en="Switch to light theme" data-dark-label-tr="Koyu temaya geç" data-dark-label-en="Switch to dark theme">
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.4A9 9 0 0 1 10.6 3.1a9 9 0 1 0 10.3 10.3Z"/></svg>
+      </button>
+      <div class="lang-switch">
+        <button type="button" class="lang-toggle" aria-haspopup="menu" aria-expanded="false" aria-controls="lang-menu">
+          <svg class="lang-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18m-9-9a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>
+          <span class="lang-label" data-en="Language">Dil</span> <span class="lang-current">TR</span>
+          <svg class="lang-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="menu" aria-label="Dil" data-label-en="Language" hidden>
+          <button type="button" role="menuitemradio" data-set-lang="tr" lang="tr" aria-checked="true" tabindex="-1">Türkçe</button>
+          <button type="button" role="menuitemradio" data-set-lang="en" lang="en" aria-checked="false" tabindex="-1">English</button>
+          <button type="button" role="menuitemradio" data-set-lang="pt-BR" lang="pt-BR" aria-checked="false" tabindex="-1">Português (Brasil)</button>
+        </div>
+      </div>
+      <button type="button" class="nav-burger" aria-label="Menüyü aç" data-label-en="Open menu" aria-controls="nav-drawer" aria-haspopup="dialog" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+      </button>
     </div>
   </div>
-</nav>
-
-<header class="page-hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="hero-dots"></div>
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-  </div>
-  <span class="badge" data-en="Privacy" data-pt-br="Privacidade">Gizlilik</span>
-  <h1 data-en='Privacy <span class="accent">Policy</span>' data-pt-br='Política de <span class="accent">Privacidade</span>'>Gizlilik <span class="accent">Politikası</span></h1>
-  <p class="lede" data-en="What data the app processes, where it is stored and for which purposes it is used." data-pt-br="Quais dados o aplicativo trata, onde são armazenados e para quais finalidades são utilizados.">Uygulamada hangi verilerin işlendiği, nerede saklandığı ve hangi amaçlarla kullanıldığı.</p>
-  <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: November 23, 2026" data-pt-br="Última atualização: 23 de novembro de 2026">Son güncelleme: 23 Kasım 2026</span></span>
 </header>
 
+<dialog class="nav-drawer" id="nav-drawer" aria-label="Ana menü" data-label-en="Main navigation">
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <a class="brand" href="/" aria-label="EL Finans"><span class="brand-mark"><img src="images/logo-nav.png" alt="" width="42" height="42"></span><span class="brand-name">Finans</span></a>
+      <button class="icon-button drawer-close" type="button" aria-label="Menüyü kapat" data-label-en="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Ana menü" data-label-en="Main navigation">
+      <a href="/#features" data-en="Features" data-pt-br="Recursos">Özellikler</a>
+      <a href="/#ai" data-en="AI Assistant" data-pt-br="Assistente de IA">Yapay Zeka</a>
+      <a href="/#security" data-en="Security" data-pt-br="Segurança">Güvenlik</a>
+      <a href="/support" data-en="Support" data-pt-br="Suporte">Destek</a>
+      <a class="nav-cta" href="/#download" data-en="Download" data-pt-br="Baixar">İndir</a>
+    </nav>
+  </div>
+</dialog>
+
 <main id="main" class="page-main" tabindex="-1">
+  <header class="page-hero">
+    <div class="page-hero-copy">
+      <span class="badge" data-en="Privacy" data-pt-br="Privacidade">Gizlilik</span>
+      <h1 data-en='Privacy <span class="accent">Policy</span>' data-pt-br='Política de <span class="accent">Privacidade</span>'>Gizlilik <span class="accent">Politikası</span></h1>
+      <p class="lede" data-en="What data the app processes, where it is stored and for which purposes it is used." data-pt-br="Quais dados o aplicativo trata, onde são armazenados e para quais finalidades são utilizados.">Uygulamada hangi verilerin işlendiği, nerede saklandığı ve hangi amaçlarla kullanıldığı.</p>
+      <span class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span data-en="Last updated: November 23, 2026" data-pt-br="Última atualização: 23 de novembro de 2026">Son güncelleme: 23 Kasım 2026</span></span>
+    </div>
+  </header>
+  <div class="legal-layout">
+    <aside class="legal-toc glass" hidden>
+      <h2 id="legal-toc-title" data-en="Contents" data-pt-br="Conteúdo">İçindekiler</h2>
+      <nav class="legal-toc-links" aria-labelledby="legal-toc-title"></nav>
+    </aside>
   <article class="legal-content">
     <section data-lang="tr">
       <div class="legal-intro"><p>EL Finans’ın hesap, şifreli kişisel bulut, ortak hesap, yapay zekâ, reklam ve tanılama özelliklerinde verileri nasıl işlediğini bu politika açıklar.</p></div>
@@ -429,6 +464,7 @@
       </div>
     </section>
   </article>
+  </div>
 </main>
 
 <footer class="footer">
@@ -456,7 +492,8 @@
   <div class="copy-line" data-en="© 2026 EL Finans. All rights reserved." data-pt-br="© 2026 EL Finans. Todos os direitos reservados.">© 2026 EL Finans. Tüm hakları saklıdır.</div>
 </footer>
 
-<script src="consent.js?v=20261002-1"></script>
-<script src="script.js?v=20260728-20"></script>
+<script src="consent.js?v=20261125-2"></script>
+<script src="site.js?v=20261125-4"></script>
+<script src="support-bot.js?v=20261125-4"></script>
 </body>
 </html>
